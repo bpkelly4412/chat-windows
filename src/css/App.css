@@ -1,24 +1,30 @@
-.App {
-  text-align: center;
+/*styling for chat-box div*/
+.chat-box {
+  height: 200px;
+  margin: 20px;
+  background: transparent;
+  border: 0;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/*styling for chat header*/
+.chat-header {
+  background-color: #4080FF;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .20);
+  color: #FFFFFF;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.chat-header p{
+  margin: 0;
+  font-size: 20px;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.glyphicon-comment {
+  color: #42B72A;
+  margin: 10px;
+  font-size: 20px;
 }
