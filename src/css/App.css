@@ -1,6 +1,5 @@
 /*styling for chat-box div*/
 .chat-box {
-  height: 200px;
   margin: 20px;
   background: transparent;
   border: 0;
@@ -17,14 +16,32 @@
   color: #FFFFFF;
   padding: 10px;
 }
-
 .chat-header p{
-  margin: 0;
   font-size: 20px;
+  margin: 0;
 }
-
 .glyphicon-comment {
   color: #42B72A;
   margin: 10px;
   font-size: 20px;
+}
+
+/*Styling for messages */
+.message {
+  display: inline-block;
+  max-width: 90%;
+  margin: 10px;
+  padding: 3px;
+  border-radius: 8px;
+}
+.received {
+  background-color: #F1F0F0;
+}
+.sent{
+  background-color: #4080FF;
+  right: 0;
+  color: #FFFFFF
+}
+.message p{
+  margin: 0;
 }
