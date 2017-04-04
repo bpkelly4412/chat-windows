@@ -35,6 +35,11 @@ class App extends Component {
               <div className="row">
                 <div className="message received"><p>Lorem ipsum</p></div>
               </div>
+              <div className="row">
+                <form className="input-box">
+                  <input type="text" placeholder="Type a message..." required/>
+                </form>
+              </div>
             </div>
           </div>
         </div>
