@@ -33,13 +33,14 @@
   margin: 10px;
   padding: 3px;
   border-radius: 8px;
+  overflow-wrap: break-word;
 }
 .received {
   background-color: #F1F0F0;
 }
 .sent{
   background-color: #4080FF;
-  right: 0;
+  float: right;
   color: #FFFFFF
 }
 .message p{

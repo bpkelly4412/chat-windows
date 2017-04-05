@@ -12,10 +12,15 @@ export default class Messages extends Component{
   render() {
     const messages = this.props.messages.map((message, i) => {
       //check to see if its the message is different from a different user than the previous one
-
-      return (
-        <Message key={i} toUser={message.toUser} fromUser={message.fromUser} message={message.message} />
-      );
+      if(message.fromUser === this.props.owner){
+        return (
+          <Message key={i} toUser={message.toUser} fromUser={message.fromUser} message={message.message} fromMe={true} />
+        );
+      }else{
+        return (
+          <Message key={i} toUser={message.toUser} fromUser={message.fromUser} message={message.message} fromMe={false} />
+        );
+      }
     });
     return(
       <div className="messages">

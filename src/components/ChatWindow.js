@@ -32,7 +32,7 @@ export default class ChatWindow extends Component{
             </div>
           </div>
           {/*end header*/}
-          <Messages messages={this.props.messages} owner={this.props.owner} toUser={this.props.toUser}/>
+          <Messages messages={this.props.messages} owner={this.props.owner} fromUser={this.props.fromUser}/>
           <ChatInput sendMessage={this.createMessage}/>
         </div>
     );

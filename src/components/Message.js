@@ -9,9 +9,10 @@ export default class Message extends Component{
   }
 
   render() {
+    const sentOrReceived = this.props.fromMe ? 'message sent' : 'message received';
     return (
       <div className="row">
-        <div className="message received">{this.props.message}</div>
+        <div className={sentOrReceived}>{this.props.message}</div>
       </div>
     );
   }
