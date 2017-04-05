@@ -30,7 +30,7 @@
 .message {
   display: inline-block;
   max-width: 90%;
-  margin: 10px;
+  margin: 1px;
   padding: 3px;
   border-radius: 8px;
   overflow-wrap: break-word;
@@ -43,8 +43,21 @@
   float: right;
   color: #FFFFFF
 }
-.message p{
-  margin: 0;
+/*if its a sent message don't display name*/
+.name.sent{
+  display: none;
+}
+.name.notFirst{
+  display: none;
+}
+.name.received{
+  color: #A4A7AE;
+  font-size: 12px;
+  padding: 3px;
+  background-color: #FFFFFF
+}
+.sent.first{
+  margin-top: 10px;
 }
 
 .input-box input{

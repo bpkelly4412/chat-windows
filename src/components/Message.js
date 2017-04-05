@@ -9,11 +9,19 @@ export default class Message extends Component{
   }
 
   render() {
-    const sentOrReceived = this.props.fromMe ? 'message sent' : 'message received';
+    const sentOrReceived = this.props.fromMe ? 'sent ' : 'received ';
+    const first = this.props.first ? 'first ' : 'notFirst ';
     return (
-      <div className="row">
-        <div className={sentOrReceived}>{this.props.message}</div>
-      </div>
+      <div>
+        <div className="row">
+          <div className={'name ' + first + sentOrReceived}> {this.props.fromUser} </div>
+        </div>
+        <div className="row">
+          <div className={'message ' + sentOrReceived + first}>
+            {this.props.message}
+          </div>
+        </div>
+    </div>
     );
   }
 }
