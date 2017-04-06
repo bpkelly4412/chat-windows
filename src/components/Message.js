@@ -17,7 +17,7 @@ export default class Message extends Component{
     const firstInChain = this.props.firstInChain ? 'firstInChain ' : 'notFirstInChain ';
     const displayTime = this.props.displayTime ? 'show ' : 'hidden ';
     return (
-      <div>
+      <div className="messageContents">
         <div className="row">
           <div className="col-md-12">
             <div className={'timeHeader ' + displayTime}>{this.props.timestamp.calendar()}</div>
@@ -35,7 +35,7 @@ export default class Message extends Component{
             </div>
           </div>
         </div>
-    </div>
+      </div>
     );
   }
 }

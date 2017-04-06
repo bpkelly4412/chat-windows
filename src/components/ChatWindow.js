@@ -6,10 +6,21 @@ import '../css/bootstrap.min.css';
 var moment = require('moment');
 
 export default class ChatWindow extends Component{
-// props are owner, toUser, messages, sendMessage(message)
+// props are owner, toUser, messages, sendMessage(message), typing, isTyping
   constructor(props){
     super(props);
     this.createMessage = this.createMessage.bind(this);
+    this.userIsTyping = this.userIsTyping.bind(this);
+    this.userStoppedTyping = this.userStoppedTyping.bind(this);
+  }
+  //sends isTyping to App
+  userIsTyping(){
+    console.log('user is typing');
+    this.props.isTyping(this.props.owner, this.props.toUser, true);
+  }
+  userStoppedTyping(){
+    console.log('user stopped typing');
+    this.props.isTyping(this.props.owner, this.props.toUser, false);
   }
   //adds information to message object that chatinput created, then calls App's sendMessage
   createMessage(message){
@@ -32,8 +43,10 @@ export default class ChatWindow extends Component{
             </div>
           </div>
           {/*end header*/}
-          <Messages messages={this.props.messages} owner={this.props.owner} toUser={this.props.toUser}/>
-          <ChatInput sendMessage={this.createMessage}/>
+          <Messages messages={this.props.messages} owner={this.props.owner} toUser={this.props.toUser}
+            typing={this.props.typing}/>
+          <ChatInput sendMessage={this.createMessage} userIsTyping={this.userIsTyping}
+            userStoppedTyping={this.userStoppedTyping}/>
         </div>
     );
   }
