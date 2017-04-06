@@ -6,6 +6,8 @@ var moment = require('moment');
 moment().format();
 //var a = moment('2016-01-01');
 //console.log(a)
+
+//No props
 class App extends Component {
   constructor(props){
     super(props);
@@ -13,6 +15,7 @@ class App extends Component {
     this.sendMessage = this.sendMessage.bind(this);
   }
 
+  //sends message to both chat windows by changing the state
   sendMessage(message){
     const messages = this.state.messages;
     messages.push(message)

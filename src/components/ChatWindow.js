@@ -6,12 +6,12 @@ import '../css/bootstrap.min.css';
 var moment = require('moment');
 
 export default class ChatWindow extends Component{
-
+// props are owner, toUser, messages, sendMessage(message)
   constructor(props){
     super(props);
     this.createMessage = this.createMessage.bind(this);
   }
-
+  //adds information to message object that chatinput created, then calls App's sendMessage
   createMessage(message){
     const messageObj = {
       toUser: this.props.toUser,
@@ -32,7 +32,7 @@ export default class ChatWindow extends Component{
             </div>
           </div>
           {/*end header*/}
-          <Messages messages={this.props.messages} owner={this.props.owner} fromUser={this.props.fromUser}/>
+          <Messages messages={this.props.messages} owner={this.props.owner} toUser={this.props.toUser}/>
           <ChatInput sendMessage={this.createMessage}/>
         </div>
     );

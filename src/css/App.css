@@ -5,6 +5,7 @@
   border-radius: 3px 3px 0 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
 }
+/*styling for messagesArea*/
 .messagesArea{
   height: 200px;
   overflow-y: auto;
@@ -30,6 +31,9 @@
 }
 
 /*Styling for messages */
+.messagesArea{
+  padding-bottom: 10px;
+}
 .message {
   display: inline-block;
   max-width: 90%;
@@ -48,14 +52,15 @@
   color: #FFFFFF;
   margin-right: 10px;
 }
-.message.last{
-  margin-bottom: 10px;
+.sent.firstInChain{
+  margin-top: 10px;
 }
+/*styling for name of messages*/
 /*if its a sent message don't display name*/
 .name.sent{
-  display: none;
+  display: none !important;
 }
-.name.notFirst{
+.name.notFirstInChain{
   display: none;
 }
 .name.received{
@@ -64,10 +69,18 @@
   padding: 3px;
   background-color: #FFFFFF
 }
-.sent.first{
-  margin-top: 10px;
+/*styling for time of messages*/
+.timeHeader{
+  margin: 0 auto;
+  text-align: center;
+  color: #9A9DA4;
+  font-size: 14px;
+  padding: 3px;
 }
 
+
+
+/*styling for input box*/
 .input-box input{
   width: 100%;
   border: 0;
