@@ -25,7 +25,7 @@ class App extends Component {
         <div className="container-fluid">
           <div className="row">
             <ChatWindow owner={'Laura'} toUser={'Rob'} messages={this.state.messages} sendMessage={this.sendMessage}/>
-            <div className="col-md-2"></div>
+            <div className="col-md-1"><div className="row"></div></div>
             <ChatWindow owner={'Rob'} toUser={'Laura'} messages={this.state.messages} sendMessage={this.sendMessage}/>
           </div>
         </div>

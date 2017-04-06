@@ -1,12 +1,15 @@
 /*styling for chat-box div*/
 .chat-box {
-  margin: 20px;
   background: transparent;
   border: 0;
   border-radius: 3px 3px 0 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
 }
-
+.messagesArea{
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
 /*styling for chat header*/
 .chat-header {
   background-color: #4080FF;
@@ -37,11 +40,16 @@
 }
 .received {
   background-color: #F1F0F0;
+  margin-left: 10px;
 }
 .sent{
   background-color: #4080FF;
   float: right;
-  color: #FFFFFF
+  color: #FFFFFF;
+  margin-right: 10px;
+}
+.message.last{
+  margin-bottom: 10px;
 }
 /*if its a sent message don't display name*/
 .name.sent{

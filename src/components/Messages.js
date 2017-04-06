@@ -8,8 +8,14 @@ export default class Messages extends Component{
     super(props);
     this.state = {};
     this.isFirstInChain = this.isFirstInChain.bind(this);
-    this.isLastInChain = this.isLastInChain.bind(this);
+    this.isLastMessage = this.isLastMessage.bind(this);
     this.fromMe = this.fromMe.bind(this);
+  }
+
+  componentDidUpdate() {
+    // There is a new message in the state, scroll to bottom of list
+    const objDiv = document.getElementById('messageList' + this.props.owner);
+    objDiv.scrollTop = objDiv.scrollHeight;
   }
 
   //checks if message i is from a different user than the previous message
@@ -27,20 +33,8 @@ export default class Messages extends Component{
   }
 
 
-  showName(i){
-    return (this.isFirstInChain(i) && !this.fromMe(i))
-  }
-
-  isLastInChain(i){
-    if(this.props.messages[i+1] === undefined){
-      return true;
-    }
-    else if(this.props.messages[i].toUser !== this.props.messages[i+1].toUser){
-      return true;
-    }
-    else{
-      return false;
-    }
+  isLastMessage(i){
+    return(i === this.props.messages.length-1)
   }
 
   fromMe(i){
@@ -53,12 +47,14 @@ export default class Messages extends Component{
         return (
           <Message key={i} toUser={message.toUser} fromUser={message.fromUser}
             message={message.message} fromMe={this.fromMe(i)}
-            first={this.isFirstInChain(i)} last={this.isLastInChain(i)} />
+            first={this.isFirstInChain(i)} last={this.isLastMessage(i)} />
         );
     });
     return(
-      <div className="messages">
-        {messages}
+      <div className="row">
+        <div className="messagesArea" id={"messageList"+this.props.owner}>
+          {messages}
+        </div>
       </div>
     );
   }

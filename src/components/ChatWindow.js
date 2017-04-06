@@ -24,7 +24,7 @@ export default class ChatWindow extends Component{
 
   render() {
     return (
-        <div className="col-md-5 chat-box">
+        <div className="col-md-4 col-md-offset-1 chat-box">
           {/*start header*/}
           <div className="row">
             <div className="col-md-12 chat-header">
