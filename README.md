@@ -4,8 +4,8 @@
 
 1. Open a Node.js terminal
 2. CD into the project directory
-3. Run npm install
-4. run npm start
+3. Run npm install (This could take upwards of 7 minutes)
+4. Run npm start
 
 This should open up the app at  http://localhost:3000/
 
