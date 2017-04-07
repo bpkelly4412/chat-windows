@@ -9,14 +9,13 @@ export default class Messages extends Component{
   //props messages, owner, toUser, typing
   constructor(props){
     super(props);
-    this.state = {};
     this.isFirstInChain = this.isFirstInChain.bind(this);
     this.displayTime = this.displayTime.bind(this);
     this.fromMe = this.fromMe.bind(this);
   }
 
+  // if there is a new message in the state, scroll to bottom of the messages
   componentDidUpdate() {
-    // There is a new message in the state, scroll to bottom of list
     const objDiv = document.getElementById('messageList' + this.props.owner + this.props.toUser);
     objDiv.scrollTop = objDiv.scrollHeight;
   }
@@ -41,7 +40,7 @@ export default class Messages extends Component{
     if(i === 0){
       return true;
     }
-    else if(this.props.messages[i].timestamp.diff(this.props.messages[i-1].timestamp, 'minutes') > 10){
+    else if(this.props.messages[i].timestamp.diff(this.props.messages[i-1].timestamp, 'minutes') >= 10){
       return true;
     }
     else{

@@ -6,14 +6,16 @@ import '../css/bootstrap.min.css';
 
 //No props
 class App extends Component {
+  //state contains indicators when the user is typing and the array of message objects
   constructor(props){
     super(props);
     this.state = { messages: [], lauraTyping: false, robTyping: false };
     this.sendMessage = this.sendMessage.bind(this);
     this.isTyping = this.isTyping.bind(this);
   }
-  //sends isTyping to chat windows by changing state
+  //sends isTyping to chat windows by changing state depending on which chat window is typing
   isTyping(fromUser, toUser, bool){
+    //if is typing
     if(bool){
       if(toUser === 'Laura' && fromUser === 'Rob'){
         this.setState({ messages: this.state.messages, lauraTyping: this.state.lauraTyping, robTyping: true})
@@ -22,6 +24,7 @@ class App extends Component {
         this.setState({ messages: this.state.messages, lauraTyping: true, robTyping: this.state.robTyping})
       }
     }
+    //if stoppedTyping
     else{
       if(toUser === 'Laura' && fromUser === 'Rob'){
         this.setState({ messages: this.state.messages, lauraTyping: this.state.lauraTyping, robTyping: false})
@@ -32,7 +35,7 @@ class App extends Component {
     }
 
   }
-  //sends message to both chat windows by changing the state
+  //sends message to both chat windows by pushing the message to the messages array in state
   sendMessage(message){
     const newMessages = this.state.messages;
     newMessages.push(message)

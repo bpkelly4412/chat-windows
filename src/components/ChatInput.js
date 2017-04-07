@@ -4,6 +4,7 @@ import '../css/bootstrap.min.css';
 
 export default class ChatInput extends Component{
   //props sendMessage(message), userIsTyping, userStoppedTyping
+  //state of input so it can be updated and sent
   constructor(props){
     super(props);
     this.state = { input: '' };
@@ -21,7 +22,7 @@ export default class ChatInput extends Component{
       this.props.userStoppedTyping();
     }
   }
-  //when sent send the message and clear the input
+  //when sent send the message and clear the input, user has stopped typing
   send(event){
     event.preventDefault();
     this.setState({ input: '' });

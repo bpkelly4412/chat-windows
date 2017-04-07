@@ -6,10 +6,6 @@ moment().format();
 
 export default class Message extends Component{
   //props key, toUser, fromUser, message, fromMe, displayTime
-  constructor(props){
-    super(props);
-    this.state = {}
-  }
 
   render() {
     //create classNames based on the props given by Messages

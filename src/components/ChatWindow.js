@@ -15,11 +15,9 @@ export default class ChatWindow extends Component{
   }
   //sends isTyping to App
   userIsTyping(){
-    console.log('user is typing');
     this.props.isTyping(this.props.owner, this.props.toUser, true);
   }
   userStoppedTyping(){
-    console.log('user stopped typing');
     this.props.isTyping(this.props.owner, this.props.toUser, false);
   }
   //adds information to message object that chatinput created, then calls App's sendMessage
